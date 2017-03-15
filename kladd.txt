@@ -1,0 +1,37 @@
+
+Quotes:
+Pakkanen
+Bjarne
+Matsumoto
+
+C: A set of «usual mistakes» must actively be avoided
+(an expert programmer will devote half the brain to constant awareness of these):
+* check buffer bounds
+* check return values / catch exceptions in C++
+* object lifetimes, references, const correctness
+* for each code path, all the above.
+
+Bash quoting story
+
+Classic OOP has failed → C++ is easy to do the wrong way
+(Encapsulation is still a valid use of OOP):
+* data inheritance: Use composition instead.
+* code reuse via inheritance: Use composition instead.
+* member functions: Use non-member functions instead.
+* polymorphism via inheritance: Use interfaces (traits) instead.
+* member variables as stateful function communication: Don't.
+
+Concurrent programming is hard to get right:
+* Channels is a way to do it right.
+
+Error handling is so easy to omit!
+* possible to use a return value without checking for failure.
+* Catch-all = hiding problems under the carpet
+* Unchecked exceptions can become a leaky interface
+
+No GC is a feature!
+* Why special-treat memory – other resources can also be leaked (file descriptors, task handles, diskspace, …).
+* If you have destructors, who needs GC?
+* No runtime → suitable for writing libraries!
+
+https://github.com/tvaneerd/cpp17_in_TTs/blob/master/ALL_IN_ONE.md
